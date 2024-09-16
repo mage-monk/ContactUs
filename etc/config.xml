@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <contact>
+            <contact>
+                <enquiry_enabled>1</enquiry_enabled>
+                <types><![CDATA[{"_1618313458472_472":{"type":"Query about a purchase I've made","send_to":"hello@example.com","area":"0"},"_1618313483109_109":{"type":"General Query or Pre-sales","send_to":"hello2@example.com","area":"0"},"_1622818016996_996":{"type":"Query about payments","send_to":"payment@example.com","area":"1"},"_1622818028322_322":{"type":"General query about my account","send_to":"payment2@example.com","area":"1"}}]]></types>
+                <account_query_enabled>0</account_query_enabled>
+            </contact>
+        </contact>
+    </default>
+</config>

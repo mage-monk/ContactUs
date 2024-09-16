@@ -1,0 +1,5 @@
+entity_id_id,card_type_id,parent_id,title,store_id,is_active,is_name_mandatory,is_email_mandatory,is_telephone_mandatory,is_comment_mandatory,is_card_id_mandatory,is_order_id_mandatory,is_postcode_mandatory,is_file_mandatory
+8,2,,"I need help with ID verification/iDpal",0,1,1,1,1,1,1,0,0,0
+43,2,8,"I do not want to do ID verification/iDpal",0,1,1,1,1,1,1,0,0,0
+45,2,8,"iDpal app will not work for me/non compatible phone",0,1,1,1,1,1,1,0,0,1
+46,2,8,"I am unable to download the iDpal app",0,1,1,1,1,1,1,0,0,1

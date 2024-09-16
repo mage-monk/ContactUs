@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <table name="magemonk_contact_us_card_type">
+        <column xsi:type="int" name="entity_id" nullable="false" identity="true" unsigned="true" comment="Entity Id" />
+        <column xsi:type="smallint" name="store_id" nullable="false" default="0" comment="Store id" />
+        <column xsi:type="varchar" name="name" nullable="false" comment="Card Type" />
+        <column xsi:type="smallint" name="is_active" nullable="false" comment="Is active" />
+        <column xsi:type="datetime" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="datetime" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <index referenceId="MAGEMONK_CONTACT_US_CARD_TYPE_ENTITY_ID" indexType="btree">
+            <column name="entity_id"/>
+        </index>
+    </table>
+
+    <table name="magemonk_contact_us_question">
+        <column xsi:type="int" name="entity_id" nullable="false" identity="true" unsigned="true" comment="Entity Id" />
+        <column xsi:type="smallint" name="store_id" nullable="false" default="0" comment="Store id" />
+        <column xsi:type="int" name="card_type_id" nullable="false" unsigned="true" comment="Card type id" />
+        <column xsi:type="int" name="parent_id" nullable="false" comment="Question id" />
+        <column xsi:type="varchar" name="title" nullable="false" comment="How can we help?" />
+        <column xsi:type="smallint" name="is_active" nullable="false" comment="Is active" />
+        <column xsi:type="smallint" name="is_name_mandatory" nullable="false" default="1" comment="Is name required" />
+        <column xsi:type="smallint" name="is_email_mandatory" nullable="false" default="1" comment="Is email required" />
+        <column xsi:type="smallint" name="is_telephone_mandatory" nullable="false" default="1" comment="Is phone required" />
+        <column xsi:type="smallint" name="is_comment_mandatory" nullable="false" default="1" comment="Is comment required" />
+        <column xsi:type="smallint" name="is_card_id_mandatory" nullable="false" default="1" comment="Is card id required" />
+        <column xsi:type="smallint" name="is_order_id_mandatory" nullable="false" default="0" comment="Is order id required" />
+        <column xsi:type="smallint" name="is_postcode_mandatory" nullable="false" default="0" comment="Is postcode required" />
+        <column xsi:type="smallint" name="is_file_mandatory" nullable="false" default="0" comment="Is file required" />
+
+        <column xsi:type="datetime" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="datetime" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="MAGEMONK_CONTACT_US_QUESTION_CARD_TYPE_ID_MAGEMONK_CONTACT_US_CARD_TYPE_ENTITY_ID" table="magemonk_contact_us_question" column="card_type_id" referenceTable="magemonk_contact_us_card_type" referenceColumn="entity_id" onDelete="CASCADE"/>
+        <index referenceId="MAGEMONK_CONTACT_US_QUESTION_ENTITY_ID" indexType="btree">
+            <column name="entity_id"/>
+            <column name="parent_id"/>
+            <column name="card_type_id"/>
+        </index>
+    </table>
+</schema>

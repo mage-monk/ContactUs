@@ -1,0 +1,19 @@
+<?php
+
+use Magento\Customer\Block\Account\Customer;
+use Magento\Framework\Escaper;
+
+/** @var Customer $block */
+/** @var Escaper $escaper */
+
+$customerContactUrl = $escaper->escapeUrl($block->getUrl('customer_contact'));
+$accountLabel = $escaper->escapeHtml(__('Account Query'));
+?>
+
+<?php if ($block->customerLoggedIn()): ?>
+    <div>
+        <a href="<?= $customerContactUrl ?>" title="<?= $accountLabel ?>">
+            <?= $accountLabel ?>
+        </a>
+    </div>
+<?php endif; ?>

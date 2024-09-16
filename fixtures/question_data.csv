@@ -1,0 +1,116 @@
+entity_id_id,card_type_id,parent_id,title,store_id,is_active,is_name_mandatory,is_email_mandatory,is_telephone_mandatory,is_comment_mandatory,is_card_id_mandatory,is_order_id_mandatory,is_postcode_mandatory,is_file_mandatory
+1,1,,"I have a balance/transaction query",0,1,1,1,1,1,1,0,0,0
+2,1,,"My card is expired/faulty/damaged",0,1,1,1,1,1,1,0,0,0
+3,1,,"I need help with the fees deducted from my card",0,1,1,1,1,1,1,0,0,0
+4,1,,"I need help spending/using card",0,1,1,1,1,1,1,0,0,0
+5,1,,"I need help with my order",0,1,1,1,1,1,1,0,0,0
+6,1,,"I need help to report my card lost/stolen",0,1,1,1,1,1,1,0,0,0
+7,2,,"I need help with Activating My Gold Chip & PIN Card",0,1,1,1,1,1,1,0,0,0
+8,2,,"I need help with ID verification/iDpal",1,1,1,1,1,1,1,0,0,0
+9,2,,"I need help with my PIN",0,1,1,1,1,1,1,0,0,0
+10,2,,"I need help spending/using card",0,1,1,1,1,1,1,0,0,0
+11,2,,"I need help updating information on my account",0,1,1,1,1,1,1,0,0,0
+12,2,,"I need help to report my card lost/stolen",0,1,1,1,1,1,1,0,0,0
+13,3,,"I need help updating information on my account",0,1,1,1,1,1,1,0,0,0
+14,3,,"I need help with the app",0,1,1,1,1,1,1,0,0,0
+15,3,,"I need help with claiming/sending digital card",0,1,1,1,1,1,1,0,0,0
+16,3,,"I would like to exchange my Digital card for a physical card",0,0,1,1,1,1,1,0,0,0
+17,3,,"I need help activating my Digital Reloadable card",0,1,1,1,1,1,1,0,0,0
+18,3,,"I need help spending/using card",0,1,1,1,1,1,1,0,0,0
+19,3,,"I need help with  adding my card to Apple wallet",0,1,1,1,1,1,1,0,0,0
+20,4,,"I need help with my Favourites card",0,0,1,1,1,1,1,0,0,0
+21,1,1,"I have a query about the balance of my cards",0,1,1,1,1,1,1,0,0,1
+22,1,1,"I have an issue checking my balance",0,1,1,1,1,1,1,0,0,1
+23,1,1,"My balance is missing some funds",0,1,1,1,1,1,1,0,0,1
+24,1,1,"I have a pending transaction on my card",0,1,1,1,1,1,1,0,0,1
+25,1,1,"I want to combine multiple cards onto one card",0,1,1,1,1,1,1,0,1,1
+26,1,1,"My card has a £0 balance",2,1,1,1,1,1,1,1,0,1
+27,1,2,"My gift card is expired/faulty/damaged",0,1,1,1,1,1,1,1,1,1
+28,1,2,"I have old paper vouchers",0,1,1,1,1,1,1,0,1,1
+29,1,3,"I have some fees that came off my card",0,1,1,1,1,1,1,0,1,1
+30,1,4,"I am having issues spending my card in-store",0,1,1,1,1,1,1,0,0,1
+31,1,4,"I am having issues part paying in store",0,1,1,1,1,1,1,0,0,1
+32,1,4,"I am having issues spending my card online",0,1,1,1,1,1,1,0,0,1
+33,1,5,"I am having issues ordering a gift card",0,1,1,1,1,1,1,0,0,1
+34,1,5,"An error message appears to use another form of payment when purchasing a gift card",0,1,1,1,1,1,1,0,0,1
+35,1,6,"I have lost my gift card",0,1,1,1,1,1,1,1,1,1
+36,1,6,"My gift card was stolen",0,1,1,1,1,1,1,1,1,1
+37,2,7,"I have not received the ID Pal activation link",0,1,1,1,1,1,1,0,0,1
+38,2,7,"The ID Pal activation link has expired",0,1,1,1,1,1,1,0,0,1
+39,2,7,"It wont let me remove the prepoplated digits when trying to activate my card",0,1,1,1,1,1,1,1,0,1
+40,2,7,"I need help activating my card",0,1,1,1,1,1,1,0,0,1
+41,2,7,"I am getting a message saying Activation Already Handled",0,1,1,1,1,1,1,0,0,1
+42,2,8,"I need help uploading my documents",0,1,1,1,1,1,1,0,0,1
+43,2,8,"I do not want to do ID verification/iDpal Pal",0,1,1,1,1,1,1,0,0,0
+44,2,8,"I do not have a valid passport or drivers licence",0,1,1,1,1,1,1,0,0,1
+45,2,8,"ID pal app will not work for me/non compatible phone",0,1,1,1,1,1,1,0,0,1
+46,2,8,"I am unable to download the ID Pal App",0,1,1,1,1,1,1,0,0,1
+47,2,9,"I have not received my PIN",0,1,1,1,1,1,1,0,0,0
+48,2,9,"I need help with my PIN",0,1,1,1,1,1,1,0,0,0
+49,2,9,"I have blocked my PIN",0,1,1,1,1,1,1,0,0,0
+50,2,9,"It wont let me enter my PIN at the till",0,1,1,1,1,1,1,0,0,0
+51,2,9,"I need a PIN reminder sent to me as I lost my PIN",0,1,1,1,1,1,1,0,0,0
+52,2,10,"My card is declining in store",0,1,1,1,1,1,1,0,0,0
+53,2,10,"My card is declining online",0,1,1,1,1,1,1,0,0,1
+54,2,10,"I need help using my card in store",0,1,1,1,1,1,1,0,0,0
+55,2,10,"I need help using my card online",0,1,1,1,1,1,1,0,0,1
+56,2,11,"I need to change the phone number under my account",0,1,1,1,1,1,1,0,0,1
+57,2,11,"I need to change the email under my account",0,1,1,1,1,1,1,0,0,1
+58,2,11,"I need to reset my password to activate my card",0,1,1,1,1,1,1,0,0,1
+59,2,12,"I have lost my gift card",0,1,1,1,1,1,1,1,1,1
+60,2,12,"My gift card was stolen",0,1,1,1,1,1,1,1,1,1
+61,3,13,"I have the wrong phone number under my account",0,1,1,1,1,1,1,0,0,1
+62,3,13,"I have the wrong email under my account",0,1,1,1,1,1,1,0,0,1
+63,3,14,"I am getting the error card loading error in the app",0,1,1,1,1,1,1,0,0,1
+64,3,14,"I am not receiving the OTP to login to the app",0,1,1,1,1,1,1,0,0,0
+65,3,14,"I am not able to see my digital card in the app",0,1,1,1,1,1,1,0,0,1
+66,3,14,"I am receiving authentification failed error in the app",0,1,1,1,1,1,1,0,0,1
+67,3,14,"I am unable to view my card details in the app",0,1,1,1,1,1,1,0,0,1
+68,3,14,"I am receiving an error when trying to add my digital card to the app",0,1,1,1,1,1,1,0,0,1
+69,3,14,"I am receiving request unsuccessful error in the app",0,1,1,1,1,1,1,0,0,1
+70,3,14,"I am receiving ABD mode error in the app",0,1,1,1,1,1,1,0,0,1
+71,3,15,"I am having issues claiming my digital card",0,1,1,1,1,1,1,1,0,1
+72,3,15,"I need the claim link resent for my digital card",0,1,1,1,1,1,1,1,0,0
+73,3,15,"I am having issues sending a digital card",0,1,1,1,1,1,1,1,0,1
+74,3,16,"I want to change my digital card to a physical card",0,1,1,1,1,1,1,1,1,0
+75,3,16,"I want to combine multiple cards into a physical card",0,1,1,1,1,1,1,0,1,1
+76,3,16,"How do I buy a physical card using my digital card",0,1,1,1,1,1,1,0,0,0
+77,3,17,"I need help activating my card",0,1,1,1,1,1,1,0,0,1
+78,3,17,"My card is greyed out on the website when trying to activate it",0,1,1,1,1,1,1,0,0,1
+79,3,17,"My ID is out of date/no passport or drivers license",0,1,1,1,1,1,1,0,0,1
+80,3,18,"I am having issues spending my digital card in store",0,1,1,1,1,1,1,0,0,1
+81,3,18,"I am having issues spending my digital card online",0,1,1,1,1,1,1,0,0,1
+82,3,19,"My card wont add to apple wallet",0,1,1,1,1,1,1,0,0,1
+83,4,20,"I am having issues spending online",0,1,1,1,1,1,1,0,0,1
+84,4,20,"I do not know how to spend this card",0,1,1,1,1,1,1,0,0,1
+85,4,20,"I do not know how to redeem this card",0,1,1,1,1,1,1,0,0,1
+86,4,20,"I never received the e code",0,1,1,1,1,1,1,1,0,1
+87,4,20,"My card is expired/no balance left",0,1,1,1,1,1,1,0,1,1
+88,4,20,"My e code is not working",0,1,1,1,1,1,1,1,0,1
+89,4,20,"My card will not work in store",0,1,1,1,1,1,1,0,0,1
+90,4,20,"My card will not work online",0,1,1,1,1,1,1,0,0,1
+91,4,20,"I do not know the balance of my card",0,1,1,1,1,1,1,0,0,1
+92,4,20,"The retailer has advised they do not accept this card",0,1,1,1,1,1,1,0,0,1
+93,5,,"I need help with something else",0,1,1,1,1,1,1,1,1,1
+94,5,93,"I need help with something else",0,1,1,1,1,1,1,1,1,1
+95,1,1,"My card has a €0 balance",1,1,1,1,1,1,1,1,0,1
+96,4,,"I have a balance/transaction query",0,1,1,1,1,1,1,1,0,1
+97,4,,"My card is expired/faulty/damaged",0,1,1,1,1,1,1,1,0,1
+98,4,,"I need help spending/using card",0,1,1,1,1,1,1,1,0,1
+99,4,,"I need help to report my card lost/stolen",0,1,1,1,1,1,1,1,0,1
+100,4,96,"I have a query about the balance of my cards",0,1,1,1,0,1,1,0,0,1
+101,4,96,"I have an issue checking my balance",0,1,1,1,0,1,1,0,0,1
+102,4,96,"My balance is missing some funds",0,1,1,1,0,1,1,0,0,1
+103,4,96,"I have a pending transaction on my card",0,1,1,1,0,1,1,0,0,1
+104,4,96,"I want to combine multiple cards onto one card",0,1,1,1,0,1,1,0,1,1
+105,4,96,"My card has a €0 balance",1,1,1,1,0,1,1,1,0,1
+106,4,96,"My card has a £0 balance",2,1,1,1,0,1,1,1,1,1
+107,4,97,"My gift card is expired/faulty/damaged",0,1,1,1,0,1,1,0,0,1
+108,4,98,"I am having issues spending my card instore",0,1,1,1,0,1,1,0,0,1
+109,4,98,"I am having issues part paying in store",0,1,1,1,0,1,1,1,0,1
+110,4,98,"I am having issues spending online",0,1,1,1,0,1,1,0,0,1
+111,4,98,"I do not know how to spend  redeem this card",0,1,1,1,0,1,1,0,0,1
+112,4,98,"I never received the e code",0,1,1,1,1,1,1,1,0,1
+113,4,98,"My e code is not working",0,1,1,1,1,1,1,1,0,1
+114,4,99,"I have lost my gift card",0,1,1,1,1,1,1,1,1,1
+115,4,99,"My gift card was stolen",0,1,1,1,1,1,1,1,1,1

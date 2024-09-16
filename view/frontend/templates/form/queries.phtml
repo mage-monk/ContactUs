@@ -1,0 +1,52 @@
+<?php
+
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+
+/**
+ * @var \MageMonk\ContactUs\Block\Queries $block
+ * @var Escaper $escaper
+ */
+?>
+<div class="field card required">
+    <label for="card" class="label">
+        <span><?= $escaper->escapeHtml(__('Card Type')) ?></span>
+    </label>
+    <select name="card"
+            id="card"
+            title="<?= $escaper->escapeHtmlAttr(__('Card Type')) ?>"
+            data-role="card-type"
+            class="required-entry">
+        <option selected disabled><?= $escaper->escapeHtml(__('Please select a Card Type')) ?></option>
+        <?php foreach ($block->getCardTypes() as $option): ?>
+            <option value="<?= $escaper->escapeHtmlAttr($option->getId()) ?>">
+                <?= $escaper->escapeHtml($option->getName()) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</div>
+<div class="field query required">
+    <label class="label" for="query">
+        <span><?= $escaper->escapeHtml(__('How can we help?')) ?></span>
+    </label>
+    <select name="query" id="query" data-role="query" class="required-entry">
+        <option value="" disabled selected>
+            <?= $escaper->escapeHtml(__('Please select an option')) ?>
+        </option>
+    </select>
+</div>
+<div class="field subquery required" style="display: none;">
+    <select name="subquery" id="subquery" data-role="subquery" class="required-entry">
+        <option value="" disabled selected>
+            <?= $escaper->escapeHtml(__('Please select an option')) ?>
+        </option>
+    </select>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#contact-form": {
+            "MageMonk_ContactUs/js/contact-queries": <?= $block->getJsLayout() ?>
+        }
+    }
+</script>

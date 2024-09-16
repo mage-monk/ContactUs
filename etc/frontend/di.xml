@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Contact\Model\ConfigInterface">
+        <plugin name="magemonk_change_recipient_email_matched_by_type"
+                type="MageMonk\ContactUs\Plugin\ChangeRecipientEmail" sortOrder="10" />
+    </type>
+
+    <type name="Magento\Contact\Controller\Index\Post">
+        <plugin name="magemonk_change_contact_path"
+                type="MageMonk\ContactUs\Plugin\ChangeContactPath" sortOrder="10" />
+    </type>
+</config>

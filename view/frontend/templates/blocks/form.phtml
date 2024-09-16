@@ -1,0 +1,237 @@
+<?php
+
+declare(strict_types=1);
+
+use Magento\Contact\ViewModel\UserDataProvider;
+use Magento\Framework\Escaper;
+use Magento\ReCaptchaUi\Block\ReCaptcha;
+
+use MageMonk\ContactUs\Block\Form;
+use MageMonk\ContactUs\Block\Form\Types;
+use MageMonk\ContactUs\Model\ConfigInterface;
+use MageMonk\Base\Helper\Store;
+
+/**
+ * @var Form $block
+ * @var Escaper $escaper
+ * @var UserDataProvider $viewModel
+ */
+
+$viewModel = $block->getViewModel();
+
+$storeHelper = $this->helper(Store::class); // @codingStandardsIgnoreLine Magento2.Templates.ThisInTemplate.FoundHelper
+
+?>
+<form class="form contact"
+      action="<?= $escaper->escapeUrl($block->getFormAction()) ?>"
+      id="contact-form"
+      method="post"
+      enctype="multipart/form-data"
+      data-mage-init='{"validation":{}}'
+      autocomplete="nope">
+    <?= $block->getLayout()
+        ->createBlock(
+            Types::class,
+            'contact.form.types',
+            [
+                'data' => [
+                    'type_area' => ConfigInterface::AREA_GENERAL
+                ]
+            ]
+        )->setTemplate('MageMonk_ContactUs::blocks/form/types.phtml')
+        ->toHtml(); ?>
+    <input type="hidden" name="store" value="<?= $escaper->escapeHtmlAttr($storeHelper->getStoreName()) ?>">
+    <div class="contact-container">
+        <div class="contact-container-inner">
+            <fieldset class="fieldset">
+                <?= /** @noEscape */$block->getLayout()
+                    ->createBlock(
+                        \MageMonk\ContactUs\Block\Queries::class,
+                        'contact.form.card.types',
+                        []
+                    )->toHtml(); ?>
+                <div class="field comment required">
+                    <label class="label" for="comment">
+                        <span><?= $escaper->escapeHtml(__('Message')) ?></span>
+                    </label>
+                    <div class="control">
+                        <textarea name="comment"
+                                  id="comment"
+                                  title="<?= $escaper->escapeHtmlAttr(__('Message')) ?>"
+                                  class="input-text"
+                                  cols="5"
+                                  rows="5"
+                                  maxlength="180"
+                                  placeholder="<?= $escaper->escapeHtmlAttr(__('Please include as much detail as possible to help us resolve your query e.g. Where you bought your card or which retailer you were attempting to spend with')) ?>" <?php // @codingStandardsIgnoreLine Generic.Files.LineLength.TooLong ?>
+                                  data-validate="{required:true}"
+                                  autocomplete="nope"
+                        ><?= $escaper->escapeHtml($viewModel->getUserComment()) ?></textarea>
+                    </div>
+                </div>
+                <div class="field name required">
+                    <label class="label" for="name"><span><?= $escaper->escapeHtml(__('Full name')) ?></span></label>
+                    <div class="control">
+                        <input name="name"
+                               id="name"
+                               title="<?= $escaper->escapeHtmlAttr(__('Full name')) ?>"
+                               value="<?= $escaper->escapeHtmlAttr($viewModel->getUserName()) ?>"
+                               class="input-text"
+                               type="text"
+                               data-validate="{required:true}"
+                               autocomplete="nope"/>
+                    </div>
+                </div>
+                <div class="field order">
+                    <label class="label" for="order">
+                        <span><?= $escaper->escapeHtml(__('Order Number')) ?></span>
+                    </label>
+                    <div class="control">
+                        <input name="order_id"
+                               id="order_id"
+                               title="<?= $escaper->escapeHtmlAttr(__('Order Number')) ?>"
+                               type="text"
+                               class="input-text"
+                               data-validate="{required:false}"
+                               autocomplete="nope"/>
+                        <span class="tooltip">
+                            <span class="field-tooltip cardbalance">
+                                <span class="field-tooltip-action action-vault tooltip-toggle">
+                                    <span><?= $block->escapeHtml(__('Order Number')) ?></span>
+                                </span>
+                                <span class="field-tooltip-content tooltip-content">
+                                    <?= $block->escapeHtml(__('Your Order Number is 10 digits long and can be found'
+                                        . ' in the order confirmation email')) ?>
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="field postcode">
+                    <label class="label" for="postcode">
+                        <span><?= $escaper->escapeHtml(__('Eircode/Postcode')) ?></span>
+                    </label>
+                    <div class="control">
+                        <input name="postcode"
+                               id="postcode"
+                               title="<?= $escaper->escapeHtmlAttr(__('Eircode/Postcode')) ?>"
+                               type="text"
+                               class="input-text"
+                               data-validate="{required:false}"
+                               autocomplete="nope"/>
+                    </div>
+                </div>
+                <div class="field file">
+                    <label class="label" for="file">
+                        <span><?= $escaper->escapeHtml(__('Upload file')) ?></span>
+                    </label>
+                    <div class="control">
+                        <input name="file"
+                               id="file"
+                               title="<?= $escaper->escapeHtmlAttr(__('Upload File')) ?>"
+                               type="file"
+                               autocomplete="nope"
+                               accept=".pdf, .png, .jpg, .gif, .docx, .jpeg/*"
+                               data-validate="{required:false}"/>
+                    </div>
+                    <label class="label"><?= $escaper->escapeHtml(__('Please upload an image of your'.
+                    ' receipt or any relevant error message to help us investigate your enquiry')) ?></label>
+                </div>
+                <div class="field card_id">
+                    <label class="label" for="card_id">
+                        <span><?= $escaper->escapeHtml(__('Card ID')) ?></span>
+                    </label>
+                    <div class="control">
+                        <input name="card_id"
+                               id="card_id"
+                               title="<?= $escaper->escapeHtmlAttr(__('Card ID')) ?>"
+                               type="text"
+                               class="input-text"
+                               data-validate="{required:false}"
+                               autocomplete="nope"/>
+                        <span class="tooltip">
+                            <span class="field-tooltip cardbalance">
+                                <span class="field-tooltip-action action-vault tooltip-toggle">
+                                    <span><?= $block->escapeHtml(__('Card Number')) ?></span>
+                                </span>
+                                <span class="field-tooltip-content tooltip-content">
+                                    <?= $block->escapeHtml(__("Your Card ID is 16 digits long and can be found on"
+                                    ."the back of your card, next to the words 'Card ID'.".
+                                    " If your card does not display a Card ID, enter 0 in this field")) ?>
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="field email required">
+                    <label class="label" for="email">
+                        <span><?= $escaper->escapeHtml(__('Email address')) ?></span>
+                    </label>
+                    <div class="control">
+                        <input name="email"
+                               id="email"
+                               title="<?= $escaper->escapeHtmlAttr(__('Email address')) ?>"
+                               value="<?= $escaper->escapeHtmlAttr($viewModel->getUserEmail()) ?>"
+                               class="input-text"
+                               type="email"
+                               data-validate='{"required":true, "validate-email":true}'
+                               autocomplete="nope"/>
+                    </div>
+                </div>
+                <div class="field field-telephone required">
+                    <label class="label" for="telephone">
+                        <span><?= $escaper->escapeHtml(__('Contact telephone number')) ?></span>
+                    </label>
+                    <div class="control"
+                        data-mage-init='
+                        { "dialingCodeFlagDropDown": {<?php /* @escapeNotVerified */ $block->getEscapedValue() ?>}}'>
+                        <input name="telephone"
+                               id="telephone"
+                               title="<?= $escaper->escapeHtmlAttr(__('Contact telephone number')) ?>"
+                               class="input-text telephone"
+                               type="tel"
+                               data-validate='{"required":true, "validate-o4a-mobile": true}'
+                               autocomplete="nope"/>
+                    </div>
+                </div>
+                <?= $block->getLayout()
+                    ->createBlock(
+                        ReCaptcha::class,
+                        'recaptcha',
+                        [
+                            'data' => [
+                                'recaptcha_for' => 'contact',
+                                'jsLayout' => [
+                                    'components' => [
+                                        'recaptcha' => [
+                                            'component' => 'Magento_ReCaptchaFrontendUi/js/reCaptcha'
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    )->setTemplate('Magento_ReCaptchaFrontendUi::recaptcha.phtml')->toHtml(); ?>
+                <div class="actions-toolbar"
+                     data-hasrequired="<?= $escaper->escapeHtmlAttr(__('* Required Fields')) ?>">
+                    <div class="primary">
+                        <input type="hidden" name="hideit" id="hideit" value=""/>
+                        <button type="submit"
+                                title="<?= $escaper->escapeHtmlAttr(__('Submit')) ?>"
+                                class="action submit primary">
+                            <span><?= $escaper->escapeHtml(__('Submit')) ?></span>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</form>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "contact-form"
+            }
+        }
+    }
+</script>

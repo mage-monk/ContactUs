@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="top.links">
+            <block class="Magento\Customer\Block\Account\Link"
+                   name="customer.contact.link"
+                   template="MageMonk_ContactUs::header/customer-contact.phtml"
+                   ifconfig="contact/contact/account_query_enabled"
+                   before="-">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="customer-contact" xsi:type="array">
+                                <item name="component" xsi:type="string">MageMonk_ContactUs/js/view/customer-contact</item>
+                            </item>
+                        </item>
+                    </argument>
+                    <argument name="sortOrder" xsi:type="number">10</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,127 @@
+<!--@subject {{trans "Contact Form %type" type=$data.type}} @-->
+<!--@vars {
+"var data.card":"Card Type",
+"var data.type":"Form Type",
+"var data.store":"Store",
+"var data.query":"Query",
+"var data.subquery":"Subquery",
+"var data.dynamic":"Dynamic Field",
+"var data.name":"Full Name",
+"var data.order_id":"Order Number",
+"var data.card_id":"Card ID",
+"var data.file":"Upload file",
+"var data.postcode":"Eircode/Postcode",
+"var data.email":"Email address",
+"var data.telephone":"Contact telephone number"
+"var data.comment":"Comment",
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table class="message-details">
+    {{if data.card}}
+    <tr>
+        <td><strong>{{trans "Card Type"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.card}}</td>
+    </tr>
+    {{/if}}
+    {{if data.type}}
+    <tr>
+        <td><strong>{{trans "Form Type"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.type}}</td>
+    </tr>
+    {{/if}}
+    {{if data.store}}
+    <tr>
+        <td><strong>{{trans "Store"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.store}}</td>
+    </tr>
+    {{/if}}
+    {{if data.query}}
+    <tr>
+        <td><strong>{{trans "Query"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.query}}</td>
+    </tr>
+    {{/if}}
+    {{if data.subquery}}
+    <tr>
+        <td><strong>{{trans "Subquery"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.subquery}}</td>
+    </tr>
+    {{/if}}
+    {{if data.dynamic}}
+    <tr>
+        <td><strong>{{trans "Dynamic Field"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.dynamic}}</td>
+    </tr>
+    {{/if}}
+    <tr>
+        <td><strong>{{trans "Full Name"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.name}}</td>
+    </tr>
+    {{if data.order_id}}
+    <tr>
+        <td><strong>{{trans "Order Number"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.order_id}}</td>
+    </tr>
+    {{/if}}
+
+    {{if data.postcode}}
+    <tr>
+        <td><strong>{{trans "Eircode/Postcode"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.postcode}}</td>
+    </tr>
+    {{/if}}
+
+    {{if data.file}}
+    <tr>
+        <td><strong>{{trans "Upload file}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.file}}</td>
+    </tr>
+    {{/if}}
+
+    {{if data.card_id}}
+    <tr>
+        <td><strong>{{trans "Card ID"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.card_id}}</td>
+    </tr>
+    {{/if}}
+    <tr>
+        <td><strong>{{trans "Email address"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.email}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Contact telephone number"}}</strong></td>
+    </tr>
+    <tr>
+        <td>{{var data.telephone}}</td>
+    </tr>
+</table>
+<p><strong>{{trans "Message"}}</strong></p>
+<p>{{var data.comment}}</p>
+
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,23 @@
+<?php
+
+declare(strict_types=1);
+
+use MageMonk\ContactUs\Block\Form\Types;
+use Magento\Framework\Escaper;
+
+/**
+ * @var Types $block
+ * @var Escaper $escaper
+ */
+?>
+<select name="type"
+    id="type"
+    title="<?= $escaper->escapeHtmlAttr(__('Contact Send')) ?>"
+    class="required-entry"
+    hidden>
+    <?php foreach ($block->getContactTypes($block->getTypeArea()) as $type): ?>
+        <option value="<?= $escaper->escapeHtmlAttr($type) ?>">
+            <?= $escaper->escapeHtml($type) ?>
+        </option>
+    <?php endforeach; ?>
+</select>

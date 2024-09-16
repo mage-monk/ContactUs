@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="contactForm" template="MageMonk_ContactUs::hyva/form.phtml" >
+            <arguments>
+                <argument name="view_model" xsi:type="object">Magento\Contact\ViewModel\UserDataProvider</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="contact.form.types" template="MageMonk_ContactUs::hyva/form/types.phtml" >
+            <arguments>
+                <argument name="type_area" xsi:type="const">MageMonk\ContactUs\Model\ConfigInterface::AREA_ACCOUNT</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

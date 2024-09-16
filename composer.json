@@ -1,0 +1,27 @@
+{
+    "name": "magemonk/module-contact-us",
+    "description": "Module to extend Magento Contact Us functionality",
+    "version": "1.0.0",
+    "require": {
+        "php": "~7.3.0||~7.4.0||~8.1.0||~8.2.0",
+        "magento/module-contact": "*"
+    },
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "authors": [
+        {
+          "name": "Prince Kumar",
+          "email": "prince.lpu1991@gmail.com"
+        }
+      ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageMonk\\ContactUs\\": ""
+        }
+    }
+}

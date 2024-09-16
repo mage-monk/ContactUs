@@ -1,0 +1,6 @@
+name,is_active,store_id
+"Standard Gift Card",1,0
+"Chip and PIN Card (Gold card)",1,0
+"Digital Card",1,0
+"Favourites Gift Card",1,0
+"I need help with something else",1,0

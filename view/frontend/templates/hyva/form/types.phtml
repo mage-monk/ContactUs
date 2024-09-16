@@ -1,0 +1,27 @@
+<?php
+
+/** @var \MageMonk\ContactUs\Block\Form\Types $block */
+?>
+<div class="contact-heading">
+    <fieldset class="fieldset">
+        <div class="field type required">
+            <label class="label" for="type"><span><?= $block->escapeHtml(__('Enquiry Type')) ?></span></label>
+            <div class="control">
+                <select name="type"
+                        id="type"
+                        title="<?= $block->escapeHtmlAttr(__('Enquiry Type')) ?>"
+                        class="required-entry form-input"
+                        x-on:change="showForm = $event.target.value">
+                    <option value="" disabled selected>
+                        <?= $block->escapeHtml(__('Please select an Enquiry Type')) ?>
+                    </option>
+                    <?php foreach ($block->getContactTypes($block->getTypeArea()) as $type): ?>
+                        <option value="<?= $block->escapeHtmlAttr($type) ?>">
+                            <?= $block->escapeHtml($type) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+</div>
