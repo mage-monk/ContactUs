@@ -1,14 +1,28 @@
 {
     "name": "magemonk/module-contact-us",
     "description": "Module to extend Magento Contact Us functionality",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "require": {
-        "php": "~7.3.0||~7.4.0||~8.1.0||~8.2.0",
+        "php": "^8.2.0",
         "magento/module-contact": "*"
     },
+    "keywords": [
+        "magento 2",
+        "Adobe Commerce - Magento",
+        "Contact us",
+        "mage-monk"
+    ],
     "type": "magento2-module",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/mage-monk/ContactUs.git"
+        }
+    ],
     "license": [
-        "proprietary"
+        "OSL-3.0",
+        "AFL-3.0"
     ],
     "authors": [
         {
@@ -16,6 +30,7 @@
           "email": "prince.lpu1991@gmail.com"
         }
       ],
+    "prefer-stable": true,
     "autoload": {
         "files": [
             "registration.php"
